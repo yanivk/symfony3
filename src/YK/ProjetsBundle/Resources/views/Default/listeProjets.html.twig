@@ -1,0 +1,6 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    {% for proj in projet %}
+        {{ proj.titreProjet }}
+    {% endfor %}
+{%endblock%}

@@ -1,0 +1,6 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    {% for comp in competences %}
+        {{ comp.nom }}
+    {% endfor %}
+{%endblock%}
