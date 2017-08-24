@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new YK\CompetencesBundle\YKCompetencesBundle(),
             new YK\ProjetsBundle\YKProjetsBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -1,15 +1,11 @@
-yk_competences_homepage:
-    path:     /
-    defaults: { _controller: YKCompetencesBundle:Default:index }
-
 yk_competences_add:
-    path:     /add
-    defaults: { _controller: YKCompetencesBundle:Default:add }
-    
+    path:     /competences/add
+    defaults: { _controller: YKCompetencesBundle:Competences:add }
+
 yk_competences_show_all:
-    path:     /competences
-    defaults: { _controller: YKCompetencesBundle:Default:showAll }
+    path:     /competences/all
+    defaults: { _controller: YKCompetencesBundle:Competences:showAll }
 
 yk_competences_show:
     path:     /competences/{id}
-    defaults: { _controller: YKCompetencesBundle:Default:show }
+    defaults: { _controller: YKCompetencesBundle:Competences:show }

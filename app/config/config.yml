@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi: ~
@@ -70,7 +70,7 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
-    
+
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
@@ -80,28 +80,28 @@ assetic:
     filters:
         cssrewrite: ~
         cssembed:
-            jar: "%kernel.root_dir%/Resources/java/cssembed.jar"        
+            jar: "%kernel.root_dir%/Resources/java/cssembed.jar"
             yui_js:
             jar: "%kernel.root_dir%/Resources/java/yuicompressor.jar"
         yui_css:
             jar: "%kernel.root_dir%/Resources/java/yuicompressor.jar"
         lessphp:
-            file: "%kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php"   
+            file: "%kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php"
             apply_to: ".less$"
     assets:
         jquery_js:
             inputs:
-                - "%kernel.root_dir%/../vendor/components/jquery/jquery.min.js"            
+                - "%kernel.root_dir%/../vendor/components/jquery/jquery.min.js"
             filters: [?yui_js]
             output: js/jquery.min.js
-           
+
         bootstrap_css:
             inputs:
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/less/bootstrap.less"
             filters:
                 - lessphp
                 - cssrewrite
-            output: css/bootstrap.css            
+            output: css/bootstrap.css
 
         bootstrap_js:
             inputs:
@@ -118,7 +118,7 @@ assetic:
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/js/tab.js"
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/js/transition.js"
             filters: [?yui_js]
-            output: js/bootstrap.js             
+            output: js/bootstrap.js
         fonts_glyphicons_eot:
             inputs:
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.eot"
@@ -144,3 +144,10 @@ fos_user:
     from_email:
         address: "yanivkoubbi@gmail.com"
         sender_name: "yanivkoubbi@gmail.com"
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_images:
+            uri_prefix:         /images
+            upload_destination: '%kernel.root_dir%/../web/uploads/images'

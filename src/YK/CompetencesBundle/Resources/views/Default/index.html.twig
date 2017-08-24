@@ -1,4 +1,8 @@
 {% extends "::base.html.twig" %}
 {% block body %}
-Hello World!
+
+    {{ competences.nom }}
+    <img src="{{ asset('/uploads/images/' ~ competences.image) }}" alt="{{ competences.nom }}" title="{{ competences.nom }}">
+
+
 {% endblock %}
