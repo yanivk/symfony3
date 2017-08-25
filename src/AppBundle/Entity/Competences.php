@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Competences
@@ -40,6 +41,7 @@ class Competences
 
     /**
      * @Vich\UploadableField(mapping="competences_images", fileNameProperty="image")
+     *
      * @var File
      */
     private $imageFile;

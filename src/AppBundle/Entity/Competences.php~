@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
-use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Competences
@@ -146,7 +146,7 @@ class Competences
     /**
      * Set projet
      *
-     * @param \Doctrine\Common\Collections\ArrayCollection an array of $projet
+     * @param integer $projet
      *
      * @return Competences
      */
@@ -160,7 +160,7 @@ class Competences
     /**
      * Get projet
      *
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return int
      */
     public function getProjet()
     {

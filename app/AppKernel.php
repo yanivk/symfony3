@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new YK\CompetencesBundle\YKCompetencesBundle(),
             new YK\ProjetsBundle\YKProjetsBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+            new Symfony\Bundle\WebServerBundle\WebServerBundle(),
 
         ];
 

@@ -4,7 +4,7 @@
     {% for comp in competences %}
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail tailleImage">
-          <img src="{{ asset('/uploads/images/' ~ comp.image) }}" alt="{{ comp.nom }}" title="{{ comp.nom }}">
+          <img src="{{ vich_uploader_asset(comp, 'imageFile') }}" alt="{{ comp.nom }}" tilte="{{ comp.nom }}">
           <div class="caption">
             <h2>
               {{ comp.nom }}
