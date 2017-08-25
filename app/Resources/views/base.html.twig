@@ -2,20 +2,61 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <title>{% block title %}Yaniv Koubbi{% endblock %}</title>
+
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-            <script src="{{ asset('js/jquery.min.js') }}"></script>
-            <script src="{{ asset('js/bootsrap.js') }}"></script>
         {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+
+
     <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Yaniv</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ path('yk_projets_show_all') }}" class="nav-link">Projets</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ path('yk_competences_show_all') }}" class="nav-link">Competences</a>
+            </li>
+          </ul>
+          <ul class="nav justify-content-end">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Utilisateur
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Connexion</a>
+              <a class="dropdown-item" href="#">Profil</a>
+              <a class="dropdown-item" href="#">Deconnexion</a>
+            </div>
+          </li>
+          </ul>
+        </div>
+      </nav>
         <div class="container">
            {% block body %}{% endblock %}
         </div>
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+          <script src="{{ asset('js/jquery.min.js') }}"></script>
+          <script src="{{ asset('js/popper.min.js') }}"></script>
+          <script src="{{ asset('js/umd/popper.min.js') }}"></script>
+          <script src="{{ asset('js/bootstrap.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

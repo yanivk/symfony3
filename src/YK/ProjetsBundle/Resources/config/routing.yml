@@ -1,14 +1,11 @@
-yk_projets_homepage:
-    path:     /
-    defaults: { _controller: YKProjetsBundle:Default:index }
 yk_projets_add:
     path:     /projets/add
-    defaults: { _controller: YKProjetsBundle:Default:add }
-    
+    defaults: { _controller: YKProjetsBundle:Projets:add }
+
 yk_projets_show_all:
-    path:     /projets
-    defaults: { _controller: YKProjetsBundle:Default:showAll }
+    path:     /projets/all
+    defaults: { _controller: YKProjetsBundle:Projets:showAll }
 
 yk_projets_show:
     path:     /projets/{id}
-    defaults: { _controller: YKProjetsBundle:Default:show }
+    defaults: { _controller: YKProjetsBundle:Projets:show }
