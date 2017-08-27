@@ -45,7 +45,7 @@ class ProjetsController extends Controller
                     $request->getSession()->getFlashBag()->add('notice', 'Projet bien enregistrée.');
 
                     // On redirige vers la page de visualisation de l'entreprise nouvellement créée
-                    return $this->redirectToRoute('yk_competences_homepage');
+                    return $this->redirectToRoute('yk_projets_show_all');
                    }
                 }
 
