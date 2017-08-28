@@ -30,9 +30,7 @@ framework:
         save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
     fragments: ~
     http_method_override: true
-    assets:
-        base_urls:
-            - 'http://yanivkoubbi.fr/'
+    assets: ~
     php_errors:
         log: true
 
@@ -42,6 +40,8 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'bootstrap_3_layout.html.twig'
+    globals:
+       base_url: "http://127.0.0.1:8000"
 
 # Doctrine Configuration
 doctrine:
