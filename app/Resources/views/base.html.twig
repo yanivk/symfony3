@@ -40,9 +40,9 @@
               Utilisateur
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Connexion</a>
-              <a class="dropdown-item" href="#">Profil</a>
-              <a class="dropdown-item" href="#">Deconnexion</a>
+              <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">Connexion</a>
+              <a class="dropdown-item" href="{{ base_url }}/profile">Profil</a>
+              <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
             </div>
           </li>
           </ul>
