@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Competences
@@ -54,10 +55,9 @@ class Competences
     private $updatedAt;
 
     /**
-     * @var int
+     * @var ArrayCollection
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Projets", cascade={"persist"})
-     * @ORM\JoinColumn(name="projet", referencedColumnName="id")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Projets")
      */
     private $projet;
 
@@ -145,30 +145,6 @@ class Competences
     }
 
     /**
-     * Set projet
-     *
-     * @param integer $projet
-     *
-     * @return Competences
-     */
-    public function setProjet($projet)
-    {
-        $this->projet = $projet;
-
-        return $this;
-    }
-
-    /**
-     * Get projet
-     *
-     * @return int
-     */
-    public function getProjet()
-    {
-        return $this->projet;
-    }
-
-    /**
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
@@ -190,5 +166,46 @@ class Competences
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->projet = new ArrayCollection();
+    }
+
+    /**
+     * Add projet
+     *
+     * @param \AppBundle\Entity\Projets $projet
+     *
+     * @return Competences
+     */
+    public function addProjet(Projets $projet)
+    {
+        $this->projet[] = $projet;
+
+        return $this;
+    }
+
+    /**
+     * Remove projet
+     *
+     * @param \AppBundle\Entity\Projets $projet
+     */
+    public function removeProjet(Projets $projet)
+    {
+        $this->projet->removeElement($projet);
+    }
+
+    /**
+     * Get projet
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProjet()
+    {
+        return $this->projet;
     }
 }

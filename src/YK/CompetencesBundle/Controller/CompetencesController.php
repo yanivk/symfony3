@@ -3,8 +3,10 @@
 namespace YK\CompetencesBundle\Controller;
 
 use AppBundle\Entity\Competences;
+use AppBundle\Entity\Projets;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class CompetencesController extends Controller
 {
@@ -25,9 +27,16 @@ class CompetencesController extends Controller
             {*/
                 $competence = new Competences();
 
+                $projet = $this
+                        ->getDoctrine()
+                        ->getRepository('AppBundle:Projets')
+                        ->findAll()
+                        ;
+                $competence->getProjet()->add($projet);
+
                 // On crée le FormBuilder grâce au service form factory
                 // On ajoute les champs de l'entité que l'on veut à notre formulaire
-                $form = $this->createForm(\AppBundle\Form\CompetencesType::class, $competence);
+                $form = $this->createForm(\AppBundle\Form\CompetencesType::class);
 
                 // Si la requête est en POST
                 if ($request->isMethod('POST')) {

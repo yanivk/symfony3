@@ -8,6 +8,8 @@
     {{ form_errors(form) }}
       <div class="form-group">
         {{ form(form) }}
+
+        {{ form_widget(form.projet.vars.prototype.titreProjet)|e }}
       </div>
 
         {{ form_end(form) }}

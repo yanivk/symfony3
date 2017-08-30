@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class CompetencesType extends AbstractType
 {
@@ -22,11 +23,10 @@ class CompetencesType extends AbstractType
                 'required' => false,
                 'allow_delete' => true,
                 ))
-                ->add('projet', EntityType::class, array(
-                  'class' => 'AppBundle:Projets',
-                  'choice_label' => 'Titre_Projet',
-                  //'multiple' => true,
-                  'expanded' => true,
+                  ->add('projet', CollectionType::class, array(
+                      'entry_type' => ProjetsType::class,
+                      'entry_options' => array('label' => false),
+                      'allow_add' => true,
                   ))
                 ->add('enregistrer', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-primary')
