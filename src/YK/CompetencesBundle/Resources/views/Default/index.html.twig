@@ -3,6 +3,7 @@
 
     {{ competences.nom }}
     <img src="{{ asset('/uploads/images/competences/' ~ competences.image) }}" alt="{{ competences.nom }}" title="{{ competences.nom }}">
+
     {% for titre in competences.projet %}
       {{ titre.titreProjet }}
     {% endfor %}

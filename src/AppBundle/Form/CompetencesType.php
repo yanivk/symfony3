@@ -28,6 +28,7 @@ class CompetencesType extends AbstractType
                       'class'        => 'AppBundle:projets',
                       'choice_label' => 'titreprojet',
                       'multiple'     => true,
+                      'expanded' => true,
                     ))
                 ->add('enregistrer', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-primary')
