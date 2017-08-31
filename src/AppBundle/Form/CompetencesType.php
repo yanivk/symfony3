@@ -23,11 +23,12 @@ class CompetencesType extends AbstractType
                 'required' => false,
                 'allow_delete' => true,
                 ))
-                  ->add('projet', CollectionType::class, array(
-                      'entry_type' => ProjetsType::class,
-                      'entry_options' => array('label' => false),
-                      'allow_add' => true,
-                  ))
+
+                  ->add('projet', EntityType::class, array(
+                      'class'        => 'AppBundle:projets',
+                      'choice_label' => 'titreprojet',
+                      'multiple'     => true,
+                    ))
                 ->add('enregistrer', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-primary')
                 ))

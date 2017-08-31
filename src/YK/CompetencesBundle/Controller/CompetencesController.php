@@ -27,16 +27,9 @@ class CompetencesController extends Controller
             {*/
                 $competence = new Competences();
 
-                $projet = $this
-                        ->getDoctrine()
-                        ->getRepository('AppBundle:Projets')
-                        ->findAll()
-                        ;
-                $competence->getProjet()->add($projet);
-
                 // On crée le FormBuilder grâce au service form factory
                 // On ajoute les champs de l'entité que l'on veut à notre formulaire
-                $form = $this->createForm(\AppBundle\Form\CompetencesType::class);
+                $form = $this->createForm(\AppBundle\Form\CompetencesType::class, $competence);
 
                 // Si la requête est en POST
                 if ($request->isMethod('POST')) {
