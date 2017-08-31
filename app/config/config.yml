@@ -92,3 +92,6 @@ vich_uploader:
         competences_images:
             uri_prefix:         /uploads/images/competences
             upload_destination: '%kernel.root_dir%/../web/uploads/images/competences'
+        projets_images:
+            uri_prefix:         /uploads/images/projets
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/projets'

@@ -1,1 +1,12 @@
-Hello mmm!
+{% extends "::base.html.twig" %}
+{% block body %}
+
+
+    <img src="{{ asset('/uploads/images/projets/' ~ projet.image) }}" class="img-fluid" alt="{{ projet.titreProjet }}" title="{{ projet.titreProjet }}">
+    {{ projet.titreProjet }}
+    <p>Competences requise pour la réalisation du projet</p>
+    {% for titre in projet.competences %}
+      {{ titre.nom }}
+    {% endfor %}
+
+{% endblock %}

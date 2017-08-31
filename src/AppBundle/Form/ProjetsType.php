@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ProjetsType extends AbstractType
 {
@@ -17,14 +19,24 @@ class ProjetsType extends AbstractType
         $builder->add('dateTexteProjet')
                 ->add('titreProjet')
                 ->add('description')
-                ->add('image')
+                ->add('competences', EntityType::class, array(
+                    'class'        => 'AppBundle:competences',
+                    'choice_label' => 'nom',
+                    'multiple'     => true,
+                    'expanded' => true,
+                ))
+                ->add('imageFile', VichImageType::class, array(
+                'label' => 'image',
+                'required' => false,
+                'allow_delete' => true,
+                ))
                 ->add('user')
                 ->add('enregistrer', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-primary')
                 ))
             ;
     }
-    
+
     /**
      * {@inheritdoc}
      */
