@@ -3,7 +3,8 @@
 
 
     <img src="{{ asset('/uploads/images/projets/' ~ projet.image) }}" class="img-fluid" alt="{{ projet.titreProjet }}" title="{{ projet.titreProjet }}">
-    {{ projet.titreProjet }}
+    <h1>{{ projet.titreProjet }}</h1>
+    Le {{ projet.dateProjet|date("d/m/Y")}}
     <p>Competences requise pour la réalisation du projet</p>
     {% for titre in projet.competences %}
       {{ titre.nom }}

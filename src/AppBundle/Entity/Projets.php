@@ -27,11 +27,11 @@ class Projets
     private $id;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="Date_texte_projet", type="string", length=70, nullable=true)
+     * @ORM\Column(name="Date_projet", type="date")
      */
-    private $dateTexteProjet;
+    private $dateProjet;
 
     /**
      * @var string
@@ -93,27 +93,27 @@ class Projets
     }
 
     /**
-     * Set dateTexteProjet
+     * Set dateProjet
      *
-     * @param string $dateTexteProjet
+     * @param \DateTime $dateProjet
      *
      * @return Projets
      */
-    public function setDateTexteProjet($dateTexteProjet)
+    public function setDateProjet($dateProjet)
     {
-        $this->dateTexteProjet = $dateTexteProjet;
+        $this->dateProjet = $dateProjet;
 
         return $this;
     }
 
     /**
-     * Get dateTexteProjet
+     * Get dateProjet
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getDateTexteProjet()
+    public function getDateProjet()
     {
-        return $this->dateTexteProjet;
+        return $this->dateProjet;
     }
 
     /**

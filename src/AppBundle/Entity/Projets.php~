@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Projets
@@ -26,9 +27,9 @@ class Projets
     private $id;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="Date_texte_projet", type="string", length=70, nullable=true)
+     * @ORM\Column(name="Date_texte_projet", type="date")
      */
     private $dateTexteProjet;
 
@@ -258,5 +259,46 @@ class Projets
     public function getImageFile()
     {
         return $this->imageFile;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->competences = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add competence
+     *
+     * @param \AppBundle\Entity\Competences $competence
+     *
+     * @return Projets
+     */
+    public function addCompetence(\AppBundle\Entity\Competences $competence)
+    {
+        $this->competences[] = $competence;
+
+        return $this;
+    }
+
+    /**
+     * Remove competence
+     *
+     * @param \AppBundle\Entity\Competences $competence
+     */
+    public function removeCompetence(\AppBundle\Entity\Competences $competence)
+    {
+        $this->competences->removeElement($competence);
+    }
+
+    /**
+     * Get competences
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCompetences()
+    {
+        return $this->competences;
     }
 }

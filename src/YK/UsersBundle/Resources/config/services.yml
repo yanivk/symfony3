@@ -1,0 +1,4 @@
+services:
+#    yk_users.example:
+#        class: YK\UsersBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

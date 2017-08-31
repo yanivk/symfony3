@@ -83,8 +83,19 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
     from_email:
-        address: "yanivkoubbi@gmail.com"
-        sender_name: "yanivkoubbi@gmail.com"
+        address: "contact@yanivkoubbi.fr"
+        sender_name: "contact@yanivkoubbi.fr"
+    registration:
+        confirmation:
+            enabled: true    
+    service:
+        mailer: fos_user.mailer.twig_swift
+    resetting:
+        email:
+            template:   email/password_resetting.email.twig
+    registration:
+        confirmation:
+            template:   FOSUserBundle:Registration:email.txt.twig
 
 vich_uploader:
     db_driver: orm

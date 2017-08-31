@@ -8,6 +8,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class ProjetsType extends AbstractType
 {
@@ -16,9 +18,15 @@ class ProjetsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('dateTexteProjet')
+        $builder->add('dateProjet', DateType::class, array(
+                    'placeholder' => array(
+                    'year' => 'année', 'month' => 'Mois', 'day' => 'Jour',
+                )))
                 ->add('titreProjet')
-                ->add('description')
+                ->add('description', TextareaType::class, array(
+                    'label' => 'description',
+                    'attr' => array('id' => 'message','class' => 'form_control', 'rows' => '4' , 'cols' => '100')
+                ))
                 ->add('competences', EntityType::class, array(
                     'class'        => 'AppBundle:competences',
                     'choice_label' => 'nom',
@@ -26,9 +34,9 @@ class ProjetsType extends AbstractType
                     'expanded' => true,
                 ))
                 ->add('imageFile', VichImageType::class, array(
-                'label' => 'image',
-                'required' => false,
-                'allow_delete' => true,
+                    'label' => 'image',
+                    'required' => false,
+                    'allow_delete' => true,
                 ))
                 ->add('user')
                 ->add('enregistrer', SubmitType::class, array(

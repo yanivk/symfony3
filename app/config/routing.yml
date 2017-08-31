@@ -1,3 +1,7 @@
+yk_users:
+    resource: "@YKUsersBundle/Resources/config/routing.yml"
+    prefix:   /
+
 yk_projets:
     resource: "@YKProjetsBundle/Resources/config/routing.yml"
     prefix:   /
