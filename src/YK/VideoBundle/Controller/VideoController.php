@@ -1,6 +1,6 @@
 <?php
 
-namespace Yk\VideoBundle\Controller;
+namespace YK\VideoBundle\Controller;
 
 use AppBundle\Entity\Video;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
