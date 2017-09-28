@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Symfony\Bundle\WebServerBundle\WebServerBundle(),
             new YK\UsersBundle\YKUsersBundle(),
+            new YK\VideoBundle\YKVideoBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

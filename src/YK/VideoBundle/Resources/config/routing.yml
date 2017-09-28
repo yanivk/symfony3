@@ -1,0 +1,11 @@
+yk_video_add:
+    path:     /video/add
+    defaults: { _controller: YKVideoBundle:Video:add }
+
+yk_video_show_all:
+    path:     /video/all
+    defaults: { _controller: YKVideoBundle:Video:showAll }
+
+yk_video_show:
+    path:     /video/{id}
+    defaults: { _controller: YKVideoBundle:Video:show }

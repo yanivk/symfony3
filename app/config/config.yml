@@ -67,13 +67,7 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    port: 25
-    encryption: ~
-    spool: { type: memory }
+
 
 assetic:
     debug:          "%kernel.debug%"
@@ -86,14 +80,16 @@ fos_user:
     user_class: AppBundle\Entity\User
     from_email:
         address: contact@yanivkoubbi.fr
+
         sender_name: contact@yanivkoubbi.fr
     service:
         mailer: fos_user.mailer.twig_swift
     resetting:
         email:
-            template:   email/password_resetting.email.twig
+            template:   FOSUserBundle:Resetting:email.txt.twig
     registration:
         confirmation:
+            enabled: true
             template:   FOSUserBundle:Registration:email.txt.twig
             enabled: true
 

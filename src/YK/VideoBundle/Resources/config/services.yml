@@ -1,0 +1,4 @@
+services:
+#    yk_video.example:
+#        class: YK\VideoBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
