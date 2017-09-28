@@ -15,8 +15,4 @@
 /vendor/
 /web/bundles/
 /nbproject/private/
-<<<<<<< HEAD
 /composer.json
-=======
-/sendgrid.env
->>>>>>> 8ad394b0b7dc955825b0d38ca383af8ce0623624

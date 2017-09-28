@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{#{% extends 'base.html.twig' %}
 
 {% block homeImg %}
   <img src="{{ base_url }}/uploads/images/site/accueil.jpg" class="img-fluid" alt="image de l'accueil">
 {% endblock %}
 
 {% block body %}
-
+<!--
     <p>
       Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
     </p>
@@ -29,5 +29,209 @@
           </div>
 
     </div>
-
+-->
 {% endblock %}
+#}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>{% block title %}Yaniv Koubbi{% endblock %}</title>
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link href="https://fonts.googleapis.com/css?family=Freckle+Face" rel="stylesheet">
+        {% endblock %}
+
+
+
+    <title>SAORI la guilde</title>
+  </head>
+  <body>
+    <div class="fond">
+    <div class="container page">
+      <div class="row entete">
+        <div class="col">
+          <p class="text-center text-uppercase">1 appel d'offre, deux semaines, 1 vainqueur</p>
+        </div>
+      </div>
+      <div class="row marge-entete">
+        <div class="col">
+          <img src="{{ base_url }}/uploads/images/saori/logo-profil.png" class="vs-saori mx-auto d-block">
+        </div>
+        <div class="col">
+            <img src="{{ base_url }}/uploads/images/saori/versus.png" class="mx-auto d-block">
+        </div>
+        <div class="col">
+          <img src="{{ base_url }}/uploads/images/saori/red.jpg" class="vs-red mx-auto d-block">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <article class="presentation">
+            <p>Après deux semaines de combat entre nos deux gladiateurs, SAORI et RED un vainqueur en est ressorti.
+              SAORI à su dominer le combat et gagner la confiance de notre client LA GUILDE.
+              Ce fut un long combat difficile et semé d'embûches, après une première manche remportée par Saori, RED à sus se relever pour rétablir la balance.
+              Malheureusement pour l'équipe RED, Saori avait déjà pris un avantage considérable sur ce dernier et ont remportés le combat.
+            </p>
+          </article>
+          <article class="jesais pas encore">
+            <p>Les deux équipes avaient de bonnes idées, c'est pour ça que nous les avons réunis pour aborder un projet commun sous le nom d'ATLAS.</p>
+            <p>Maintenant tous ensemble nous collaborerons pour mener à bien ce projet et pouvoir satisfaire et aider une ONG.
+              Retrouver le projet plus en détail dans cette article et n'hesiter pas si vous voulez plus d'info sur le projet à nous suivre sur
+              <a href="https://www.facebook.com/startupSaori/">Facebook</a> et
+              <a href="https://twitter.com/startupSaori">Twitter</a>.
+              <div class="row">
+                <div class="col">
+                  <div class="tilt pic">
+                    <a href="https://www.facebook.com/startupSaori/">
+                      <img src="{{ base_url }}/uploads/images/saori/facebook.jpg" class="float-right social">
+                    </a>
+                  </div>
+
+                </div>
+                <div class="col">
+                  <div class="tiltRight pic">
+                    <a href="https://twitter.com/startupSaori">
+                      <img src="{{ base_url }}/uploads/images/saori/twitter.jpg" class="float-left social">
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </p>
+          </article>
+        </div>
+      </div>
+    <!--Vidéeo de presentation-->
+    <div class="video">
+        <video width="100%"  src="{{ base_url }}/uploads/images/saori/video/Final comp_2.mp4" autoplay loop controls>
+        </video>
+    </div>
+
+      <h1 class="text-center titre">SAORI & LA GUILDE</h1>
+      <!--SAORI-->
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center">SAORI</h2>
+          <article >
+            <p>Saori est une startup dédiée au service numérique, elle a été créée en 2017. Elle est spécialisée
+              dans les méthodes, outils et technologies de production web. Au centre de vos projets,
+              bilingues, nous traduisons les enjeux marketing en plan de développement pour vos
+              partenaires IT et assurons la réussite de vos projets en créant l'adhérence nécessaire de toutes
+              vos équipes.
+            </p>
+            <p>
+              A l'agence, vous nous confiez vos projets pour vous assurer d'avoir l'interlocuteur à l'écoute
+              de votre besoin, qui concrétisera votre projet à coup sûr, sans faille ni zone de flou.
+              Notre philosophie : aider nos clients à réussir leur stratégie digitale en définissant et analysant
+              leurs besoins pour leur amener une réponse pertinente et personnalisée, en toute transparence.
+            </p>
+          </article>
+
+        </div>
+        <div class="col align-self-center">
+          <img src="{{ base_url }}/uploads/images/saori/logo-profil.png" class="logo-saori">
+        </div>
+      </div>
+
+        <!--La guilde-->
+        <div class="row align-items-center">
+          <div class="col align-self-center">
+            <img src="{{ base_url }}/uploads/images/saori/logo-guilde.png" alt="" class="Logo ">
+          </div>
+          <div class="col">
+            <h2 class="text-center">La Guilde</h2>
+            <article>
+              <p>
+                La Guilde est une association de solidarité internationale reconnue d’utilité publique,
+                elle a été créée en 1967. Un des programmes a pour objectif l’envoi de volontaire dans
+                différents pays.
+              </p>
+              <p>
+                L’objectif de ce projet est de piloter en ligne l’envoi de volontaire avec différents espaces
+                et différents statuts. Une solution de dématérialisation permettra de capitaliser les
+                données et de mieux interagir entre les différents acteurs, LA Guilde, mais aussi les
+                organisations partenaires et les différents types de volontaires.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!--Besoin et solution-->
+        <h1 class="text-center titre">Le projet</h1>
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center">Leur besoin</h2>
+          <p>
+            <ul class="list-group">
+              <li class="list-group-item">La simplification des processus par la dématérialisation</li>
+              <li class="list-group-item">L’harmonisation des méthodes de travail via une solution commune</li>
+              <li class="list-group-item">La mutualisation des données et multi-langues</li>
+              <li class="list-group-item">La fluidification de l’accessibilité des données</li>
+              <li class="list-group-item">La sécurisation de vos données sensibles</li>
+              <li class="list-group-item">La génération des contrats automatiques et rééditable</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col">
+          <h2 class="text-center">Notre solution</h2>
+          <ul class="list-group">
+            <li class="list-group-item">Application Saas évolutive</li>
+            <li class="list-group-item">Dématérialiser la gestion des processus de missions des différents pôles</li>
+            <li class="list-group-item">Multilingue</li>
+            <li class="list-group-item">Générer automatiquement des documents</li>
+            <li class="list-group-item">Etre axée principalement sur l’UX</li>
+            <li class="list-group-item">La mutualisation des données</li>
+            <li class="list-group-item">Mise en application des règles de sécurités (respect des normes / GDPR)</li>
+            <li class="list-group-item">D’être utilisable sur tous les périphériques et tous les OS</li>
+            <li class="list-group-item">Permet un suivi en temps réel des missions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Plusieurs types d'acteurs</h3>
+          <img src="{{ base_url }}/uploads/images/saori/poles.png" class="img-fluid">
+        </div>
+        <div class="col">
+          <h3>Une solution innovante</h3>
+          <img src="{{ base_url }}/uploads/images/saori/Workflow.png" class="img-fluid">
+        </div>
+      </div>
+      <h2>Quelques maquettes</h2>
+      <div class="row">
+        <div class="col">
+          <img src="{{ base_url }}/uploads/images/saori/mobile.jpg" class="img-fluid" >
+        </div>
+        <div class="col">
+          <img src="{{ base_url }}/uploads/images/saori/desktop.JPG" class="img-fluid" >
+        </div>
+      </div>
+      <h2>Notre organisation</h2>
+      <div class="row">
+
+        <div class="col">
+          <img src="{{ base_url }}/uploads/images/saori/organigramme.jpg" class="img-fluid" >
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+
+
+    </div>
+
+  {% block javascripts %}
+          <script src="{{ asset('js/jquery.min.js') }}"></script>
+          <script src="{{ asset('js/popper.min.js') }}"></script>
+          <script src="{{ asset('js/umd/popper.min.js') }}"></script>
+          <script src="{{ asset('js/bootstrap.js') }}"></script>
+        {% endblock %}
+
+        </body>
+</html>
