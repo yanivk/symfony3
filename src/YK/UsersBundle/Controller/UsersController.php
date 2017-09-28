@@ -110,4 +110,21 @@ class UsersController extends Controller
             throw new sfException('Error sending email out - ' . $e->getMessage());
         }
     }
+
+    public function indexAction($name ="toto", \Swift_Mailer $mailer)
+    {
+        $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('contact@yanivkoubbi.fr')
+            ->setTo('yanivkoubbi@gmail.com')
+            ->setBody(
+                $this->renderView(
+                    'YKUsersBundle:Default:email.txt.twig',
+                    array('name' => $name)
+                )
+            )
+        ;
+        $mailer->send($message);
+
+        return $this->render('YKUsersBundle:Default:index.html.twig');
+    }
 }

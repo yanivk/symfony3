@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<div class="row">
+    {% for vid in video %}
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{{ vich_uploader_asset(vid, 'videoFile') }}" class="img-fluid" alt="{{ vid.nom }}" tilte="{{ vid.nom }}">
+            <div class="caption">
+              <h2>
+                {{ vid.nom }}
+              </h2>
+              <p>
+                {{ vid.description }}
+              </p>
+              <p>
+                <a href="{{ base_url }}/projets/{{ vid.id }}" class="btn btn-primary" role="button">Button</a>
+              </p>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+{%endblock%}

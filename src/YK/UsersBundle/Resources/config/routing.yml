@@ -1,3 +1,7 @@
 yk_users_contact:
     path:     /contact
     defaults: { _controller: YKUsersBundle:Users:contact }
+
+yk_users_index:
+    path:     /index
+    defaults: { _controller: YKUsersBundle:Users:index }

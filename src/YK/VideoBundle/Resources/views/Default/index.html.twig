@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+
+
+    <img src="{{ asset('/uploads/images/video/' ~ video.nom) }}" class="img-fluid" alt="{{ video.nom }}" title="{{ video.nom }}">
+    <h1>{{ video.nom }}</h1>
+    <h2>Description</h2>
+    <p>{{ titre.nom }}</p>
+
+
+{% endblock %}
