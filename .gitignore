@@ -16,3 +16,5 @@
 /web/bundles/
 /nbproject/private/
 /composer.json
+/sendgrid.env
+/app/config/config.yml
