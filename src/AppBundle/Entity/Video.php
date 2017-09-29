@@ -39,7 +39,7 @@ class Video
      */
     private $video;
     /**
-     * @Vich\UploadableField(mapping="video_video", fileNameProperty="video")
+     * @Vich\UploadableField(mapping="video_videos", fileNameProperty="video")
      *
      * @var File
      */
