@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+
+    <h1>{{ groupeVideos.nom }}</h1>
+    <h2>Description</h2>
+    <p>{{ groupeVideos.description }}</p>
+
+    <a href="{{ base_url }}/video/add"></a>
+
+{% endblock %}

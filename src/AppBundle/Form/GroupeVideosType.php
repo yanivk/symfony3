@@ -6,9 +6,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class VideoType extends AbstractType
+class GroupeVideosType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -16,10 +16,9 @@ class VideoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nom')
-                ->add('videoFile', VichImageType::class, array(
-                    'label' => 'video',
-                    'required' => false,
-                    'allow_delete' => true,
+                ->add('description', TextareaType::class, array(
+                    'label' => 'description',
+                    'attr' => array('id' => 'message','class' => 'form_control', 'rows' => '4' , 'cols' => '100')
                 ))
                 ->add('enregistrer', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-primary')
@@ -33,7 +32,7 @@ class VideoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Video'
+            'data_class' => 'AppBundle\Entity\GroupeVideos'
         ));
     }
 
@@ -42,7 +41,7 @@ class VideoType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_video';
+        return 'appbundle_groupeVideos';
     }
 
 

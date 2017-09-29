@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<div class="row">
+    {% for vid in groupeVideos %}
+        <div class="col-sm-6 col-md-4">
+            <div class="caption">
+              <h2>
+                {{ vid.nom }}
+              </h2>
+              <p>
+                {{ vid.description }}
+              </p>
+              <p>
+                <a href="{{ base_url }}/videos/{{ vid.id }}" class="btn btn-primary" role="button">Button</a>
+              </p>
+            </div>
+
+        </div>
+    {% endfor %}
+</div>
+{%endblock%}

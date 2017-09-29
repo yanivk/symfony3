@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Video
@@ -39,11 +38,7 @@ class Video
      * @ORM\Column(name="video", type="string", length=255)
      */
     private $video;
-
     /**
-     * @Assert\File(
-     *     maxSize = "20M"
-     * )
      * @Vich\UploadableField(mapping="video_videos", fileNameProperty="video")
      *
      * @var File
@@ -124,7 +119,12 @@ class Video
     {
         return $this->video;
     }
-
+    /**
+    *
+    * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $video
+    *
+    * @return Video
+    */
     public function setVideoFile(File $video = null)
     {
         $this->videoFile = $video;
@@ -172,7 +172,7 @@ class Video
     /**
      * Set groupeVideos
      *
-     * @param int $groupeVideos
+     * @param integer $groupeVideos
      *
      * @return Video
      */

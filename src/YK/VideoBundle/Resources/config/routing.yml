@@ -1,7 +1,3 @@
-yk_video_add:
-    path:     /video/add
-    defaults: { _controller: YKVideoBundle:Video:add }
-
 yk_video_show_all:
     path:     /video/all
     defaults: { _controller: YKVideoBundle:Video:showAll }
@@ -9,3 +5,19 @@ yk_video_show_all:
 yk_video_show:
     path:     /video/{id}
     defaults: { _controller: YKVideoBundle:Video:show }
+
+yk_groupesVideos_add:
+    path:     /videos/add
+    defaults: { _controller: YKVideoBundle:GroupeVideos:add }
+
+yk_groupesVideos_addVideo:
+    path:     /video/{id}/add
+    defaults: { _controller: YKVideoBundle:GroupeVideos:addVideo }
+
+yk_groupesVideos_show_all:
+    path:     /videos/all
+    defaults: { _controller: YKVideoBundle:GroupeVideos:showAll }
+
+yk_groupesVideos_show:
+    path:     /videos/{id}
+    defaults: { _controller: YKVideoBundle:GroupeVideos:show }
