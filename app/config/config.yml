@@ -103,5 +103,5 @@ vich_uploader:
             uri_prefix:         /uploads/images/projets
             upload_destination: '%kernel.root_dir%/../web/uploads/images/projets'
         video_video:
-            uri_prefix:         /uploads/images/video
+            uri_prefix:         /uploads/video/cours
             upload_destination: '%kernel.root_dir%/../web/uploads/video/cours'
