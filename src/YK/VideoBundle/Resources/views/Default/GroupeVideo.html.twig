@@ -6,27 +6,19 @@
     <p>{{ groupeVideos.description }}</p>
 
     <a href="{{ base_url }}/video/{{ groupeVideos.id }}/add"><i class="material-icons">control_point</i></a>
-
-    {% for vid in video %}
-    <div class="col-sm-6 col-md-4">
+    <div class="row">
+      {% for vid in video %}
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <h2>
-              {{ vid.nom }}
-            </h2>
+            <h2>{{ vid.nom }}</h2>
             <p>
-
-              </p>
-              <p>
-                <a href="{{ base_url }}/video/{{ vid.id }}" class="btn btn-primary" role="button">Voir la video</a>
-              </p>
-            </div>
-
+              <a href="{{ base_url }}/video/{{ vid.id }}" class="btn btn-primary" role="button">Voir la video</a>
+            </p>
           </div>
         </div>
       </div>
-    {% endfor %}
-
+      {% endfor %}
+    </div>
 
 {% endblock %}

@@ -118,7 +118,7 @@ class GroupeVideosController extends Controller
       $video = $this
       ->getDoctrine()
       ->getRepository('AppBundle:Video')
-      ->find($groupeVideo->getId())
+      ->findByGroupeVideos($groupeVideo->getId())
       ;
 
       if (!$groupeVideo){
@@ -127,7 +127,7 @@ class GroupeVideosController extends Controller
 
       return $this->render('YKVideoBundle:Default:GroupeVideo.html.twig',
               array('groupeVideos'  => $groupeVideo,
-                    'video'  => $video, 
+                    'video'  => $video,
               ));
   }
 
