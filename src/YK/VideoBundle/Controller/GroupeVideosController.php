@@ -54,10 +54,8 @@ class GroupeVideosController extends Controller
       ->getRepository('AppBundle:GroupeVideos')
       ->find($id)
       ;
-
-
       $video = new Video();
-      $video->setGroupeVideos(GroupeVideos::class, $groupeVideo);
+      $video->setGroupeVideos($groupeVideo);
 
       // On crée le FormBuilder grâce au service form factory
       // On ajoute les champs de l'entité que l'on veut à notre formulaire
@@ -72,7 +70,8 @@ class GroupeVideosController extends Controller
         // On vérifie que les valeurs entrées sont correctes
         if ($form->isSubmitted() && $form->isValid()) {
           // On enregistre notre objet $form dans la base de données.
-          $em = $this->getDoctrine()->getManager();
+          $em = $this->getDoctrine()->getManager();  
+                 
           $em->persist($video);
           $em->flush();
 

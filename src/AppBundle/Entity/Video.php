@@ -58,7 +58,6 @@ class Video
     private $updatedAt;
 
     /**
-    * @var int
     *
     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\GroupeVideos")
     * @ORM\JoinColumn(nullable=false)
@@ -169,25 +168,14 @@ class Video
         return $this->updatedAt;
     }
 
-    /**
-     * Set groupeVideos
-     *
-     * @param int $groupeVideos
-     *
-     * @return Video
-     */
+
     public function setGroupeVideos($groupeVideos)
     {
         $this->groupeVideos = $groupeVideos;
 
         return $this;
-    }
+  }
 
-    /**
-     * Get groupeVideos
-     *
-     * @return int
-     */
     public function getGroupeVideos()
     {
         return $this->groupeVideos;
