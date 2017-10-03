@@ -7,6 +7,7 @@ use AppBundle\Entity\Video;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+
 class GroupeVideosController extends Controller
 {
   public function addAction(Request $request){
@@ -70,8 +71,8 @@ class GroupeVideosController extends Controller
         // On vérifie que les valeurs entrées sont correctes
         if ($form->isSubmitted() && $form->isValid()) {
           // On enregistre notre objet $form dans la base de données.
-          $em = $this->getDoctrine()->getManager();  
-                 
+          $em = $this->getDoctrine()->getManager();
+
           $em->persist($video);
           $em->flush();
 

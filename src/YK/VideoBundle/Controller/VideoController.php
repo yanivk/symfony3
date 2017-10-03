@@ -5,10 +5,11 @@ namespace YK\VideoBundle\Controller;
 use AppBundle\Entity\Video;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class VideoController extends Controller
 {
-  
+
   public function showAllAction(){
   $video = $this
   ->getDoctrine()
@@ -36,7 +37,8 @@ class VideoController extends Controller
       }
 
       return $this->render('YKVideoBundle:Default:index.html.twig',
-              array('video'  => $video ));
+              array('video'  => $video,
+              ));
   }
 
 }
