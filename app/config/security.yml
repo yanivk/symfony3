@@ -28,4 +28,3 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/video/, role: ROLE_ADMIN }
-        - { path: ^/videos/, role: ROLE_ADMIN }
