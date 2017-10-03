@@ -2,7 +2,7 @@
 {% block body %}
 
 
-    <video controls  title="{{ video.video }}">
+    <video id="my-video" class="video-js" controls  title="{{ video.video }}">
       <source src="{{ asset('/uploads/video/cours/' ~ video.video) }}" type="rtmp/flv">
     </video>
     <h1>{{ video.nom }}</h1>
