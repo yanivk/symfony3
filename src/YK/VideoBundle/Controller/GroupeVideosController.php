@@ -115,7 +115,7 @@ class GroupeVideosController extends Controller
       ->getRepository('AppBundle:GroupeVideos')
       ->find($id)
       ;
-
+      
       if (!$groupeVideo){
           throw $this->createNotFoundException('Aucune  groupe video ne correspond a cette id');
       }

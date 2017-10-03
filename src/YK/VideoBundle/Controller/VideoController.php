@@ -32,6 +32,8 @@ class VideoController extends Controller
       ->find($id)
       ;
 
+      $groupevideo = $video->getGroupeVideos();
+
       if (!$video){
           throw $this->createNotFoundException('Aucune video ne correspond a cette id');
       }

@@ -3,11 +3,11 @@
 
 
     <video controls src="{{ asset('/uploads/video/cours/' ~ video.video) }}" title="{{ video.video }}">
-      
+
     </video>
     <h1>{{ video.nom }}</h1>
     <h2>Description</h2>
-    <p>{{ video.nom }}</p>
+    <p>{{ video.groupeVideos.description }}</p>
 
 
 {% endblock %}
