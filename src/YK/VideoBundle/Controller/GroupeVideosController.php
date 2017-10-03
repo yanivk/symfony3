@@ -115,13 +115,20 @@ class GroupeVideosController extends Controller
       ->getRepository('AppBundle:GroupeVideos')
       ->find($id)
       ;
-      
+      $video = $this
+      ->getDoctrine()
+      ->getRepository('AppBundle:Video')
+      ->find($groupeVideo->getId())
+      ;
+
       if (!$groupeVideo){
           throw $this->createNotFoundException('Aucune  groupe video ne correspond a cette id');
       }
 
       return $this->render('YKVideoBundle:Default:GroupeVideo.html.twig',
-              array('groupeVideos'  => $groupeVideo ));
+              array('groupeVideos'  => $groupeVideo,
+                    'video'  => $video, 
+              ));
   }
 
 }

@@ -10,11 +10,17 @@ use Doctrine\Common\Collections\ArrayCollection;
 class VideoController extends Controller
 {
 
-  public function showAllAction(){
+  public function showAllAction($id){
   $video = $this
   ->getDoctrine()
   ->getRepository('AppBundle:Video')
   ->findAll()
+  ;
+
+  $groupeVideo = $this
+  ->getDoctrine()
+  ->getRepository('AppBundle:GroupeVideos')
+  ->find($id)
   ;
 
   if (!$video){

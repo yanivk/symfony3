@@ -7,6 +7,24 @@
 
     <a href="{{ base_url }}/video/{{ groupeVideos.id }}/add"><i class="material-icons">control_point</i></a>
 
-    
+    {% for vid in video %}
+    <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h2>
+              {{ vid.nom }}
+            </h2>
+            <p>
+
+            </p>
+            <p>
+              <a href="{{ base_url }}/video/{{ vid.id }}" class="btn btn-primary" role="button">Voire la video</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
 
 {% endblock %}

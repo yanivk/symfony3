@@ -1,5 +1,5 @@
 yk_video_show_all:
-    path:     /video/all
+    path:     /video/{id}/all
     defaults: { _controller: YKVideoBundle:Video:showAll }
 
 yk_video_show:
