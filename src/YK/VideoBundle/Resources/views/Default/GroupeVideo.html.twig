@@ -7,32 +7,26 @@
 
     <a href="{{ base_url }}/video/{{ groupeVideos.id }}/add"><i class="material-icons">control_point</i></a>
 
-    {% for vid in video %}
-    <div class="col-sm-6 col-md-4">
+    <div class="row">
+      {% for vid in video %}
       <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h2>
-              {{ vid.nom }}
-            </h2>
-            <p>
+          <div class="thumbnail">
+            <div class="caption">
+              <h2>
+                {{ vid.nom }}
+              </h2>
+              <p>
 
-<<<<<<< HEAD
               </p>
               <p>
                 <a href="{{ base_url }}/video/{{ vid.id }}" class="btn btn-primary" role="button">Voir la video</a>
               </p>
             </div>
-=======
-            </p>
-            <p>
-              <a href="{{ base_url }}/video/{{ vid.id }}" class="btn btn-primary" role="button">Voire la video</a>
-            </p>
->>>>>>> parent of 4702953... Les videos se placent bien dans les chapitres
           </div>
-        </div>
       </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+
 
 
 {% endblock %}
