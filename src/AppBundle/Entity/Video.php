@@ -42,7 +42,7 @@ class Video
 
     /**
      * @Assert\File(
-     *     maxSize = "20M"
+     *     maxSize = "100M"
      * )
      * @Vich\UploadableField(mapping="video_videos", fileNameProperty="video")
      *
