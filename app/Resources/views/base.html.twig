@@ -31,6 +31,11 @@
           <li class="nav-item">
             <a href="{{ path('yk_competences_show_all') }}" class="nav-link">Competences</a>
           </li>
+          {% if is_granted("ROLE_ADMIN") %}
+          <li class="nav-item">
+            <a href="{{ path('yk_groupesVideos_show_all') }}" class="nav-link">Videos</a>
+          </li>
+          {% endif %}
         </ul>
         <ul class="nav justify-content-end">
           <li class="nav-item dropdown">

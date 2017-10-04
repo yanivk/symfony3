@@ -79,7 +79,7 @@ class GroupeVideosController extends Controller
           $request->getSession()->getFlashBag()->add('notice', 'Video bien enregistrée.');
 
           // On redirige vers la page de visualisation de l'entreprise nouvellement créée
-          return $this->redirectToRoute('yk_video_show_all');
+          return $this->redirectToRoute('yk_groupesVideos_show', array('id' => $id));
          }
       }
 
