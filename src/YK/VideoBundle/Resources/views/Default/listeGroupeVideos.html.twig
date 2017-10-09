@@ -15,9 +15,9 @@
               <p>
                 {{ vid.description }}
               </p>
-              <p>
-                <a href="{{ base_url }}/videos/{{ vid.id }}" class="btn btn-primary" role="button">Voire les videos</a>
-              </p>
+                  <a href="{{ base_url }}/videos/{{ vid.id }}" class="btn btn-lg btn-primary" role="button"><i class="fa fa-file-video-o" aria-hidden="true"></i></a>
+
+                  <a href="{{ base_url }}/videos/{{ vid.id }}/delete" class="btn btn-secondary btn-lg" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </div>
         </div>
     {% endfor %}

@@ -60,7 +60,7 @@ class Video
     /**
     *
     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\GroupeVideos")
-    * @ORM\JoinColumn(nullable=false)
+    * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
     *
     */
     private $groupeVideos;

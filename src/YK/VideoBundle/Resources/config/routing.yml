@@ -21,3 +21,7 @@ yk_groupesVideos_show_all:
 yk_groupesVideos_show:
     path:     /videos/{id}
     defaults: { _controller: YKVideoBundle:GroupeVideos:show }
+
+yk_groupesVideos_delete:
+    path:     /videos/{id}/delete
+    defaults: { _controller: YKVideoBundle:GroupeVideos:delete }

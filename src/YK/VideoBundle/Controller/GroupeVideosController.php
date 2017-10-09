@@ -131,4 +131,28 @@ class GroupeVideosController extends Controller
               ));
   }
 
+  public function deleteAction($id){
+      $groupeVideoSuppresion = $this
+      ->getDoctrine()
+      ->getRepository('AppBundle:GroupeVideos')
+      ->find($id)
+      ;
+      $groupeVideo = $this
+      ->getDoctrine()
+      ->getRepository('AppBundle:GroupeVideos')
+      ->findAll()
+      ;
+      $em = $this->getDoctrine()->getManager();
+      $em->remove($groupeVideoSuppresion);
+      $em->flush();
+
+      if (!$groupeVideo){
+          throw $this->createNotFoundException('Aucune  groupe video ne correspond a cette id');
+      }
+
+      return $this->render('YKVideoBundle:Default:listeGroupeVideos.html.twig',
+              array('groupeVideos'  => $groupeVideo,
+              ));
+  }
+
 }
