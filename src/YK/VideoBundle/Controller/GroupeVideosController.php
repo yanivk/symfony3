@@ -143,7 +143,7 @@ class GroupeVideosController extends Controller
       ->findAll()
       ;
       $em = $this->getDoctrine()->getManager();
-      $em->remove($groupeVideoSuppresion);
+      $em->remove($groupeVideoSuppresion->getId());
       $em->flush();
 
       if (!$groupeVideo){
