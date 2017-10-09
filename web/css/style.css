@@ -146,3 +146,12 @@ video{
           transform: rotate(10deg);
   -webkit-filter: blur(0);
 }
+
+/**********************************************
+**************Page video***********************
+**********************************************/
+
+a.list-actif:focus{
+  background-color: #007bff;
+  color: #ffffff;
+}
