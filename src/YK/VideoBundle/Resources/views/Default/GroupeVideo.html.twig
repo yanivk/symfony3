@@ -7,17 +7,17 @@
 
     <a href="{{ base_url }}/video/{{ groupeVideos.id }}/add"><i class="material-icons">control_point</i></a>
 
-      <figure id="video_player">
-        <video controls poster="nambia1.jpg">
+      <div id="video_player">
+        <video controls>
           <source src="{{ asset('/uploads/video/cours/1.1 - aborder-cette-formation-81-rtmp_video_vqxf1khw5hs2016-10-17-19-00-01.mp4') }}" >
         </video>
 
-        <figcaption>
+        <div class="list-group">
           {% for vid in video %}
-          <a href="{{ asset('/uploads/video/cours/' ~ vid.video) }}">{{ vid.nom }}</a> <br>
+            <a href="{{ asset('/uploads/video/cours/' ~ vid.video) }}" class="list-group-item list-group-item-action">{{ vid.nom }}</a>
           {% endfor %}
-        </figcaption>
-      </figure>
+        </div>
+      </div>
 
       <script type="text/javascript">
         var video_player = document.getElementById("video_player"),
@@ -30,12 +30,9 @@
           videotarget = this.getAttribute("href");
           filename = videotarget.substr(0, videotarget.lastIndexOf('.')) || videotarget;
           video = document.querySelector("#video_player video");
-          video.removeAttribute("controls");
-          video.removeAttribute("poster");
           source = document.querySelectorAll("#video_player video source");
           source[0].src = filename + ".mp4";
           video.load();
-          video.play();
         }
       </script>
 
