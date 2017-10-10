@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class GroupeVideosType extends AbstractType
 {
@@ -19,6 +20,11 @@ class GroupeVideosType extends AbstractType
                 ->add('description', TextareaType::class, array(
                     'label' => 'description',
                     'attr' => array('id' => 'message','class' => 'form_control', 'rows' => '4' , 'cols' => '100')
+                ))
+                ->add('imageFile', VichImageType::class, array(
+                'label' => 'image',
+                'required' => false,
+                'allow_delete' => true,
                 ))
                 ->add('enregistrer', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-primary')

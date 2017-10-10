@@ -7,17 +7,22 @@
 </div>
 <div class="row">
     {% for vid in groupeVideos %}
-        <div class="col-sm-6 col-md-4">
-            <div class="caption">
-              <h2>
+        <div class="card col-3 bg-light mb-3">
+          <div class="row justify-content-end">
+              <a href="#"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></a>
+              <a href="{{ base_url }}/videos/{{ vid.id }}/delete"><i class="fa fa-times fa-2x" aria-hidden="true"></i></i></a>
+          </div>
+
+          <img class="card-img-top" src="{{ vich_uploader_asset(vid, 'imageFile') }}" alt="{{ vid.nom }}">
+
+            <div class="card-body">
+              <h4>
                 {{ vid.nom }}
-              </h2>
-              <p>
+              </h4>
+              <p class="card-text">
                 {{ vid.description }}
               </p>
-                  <a href="{{ base_url }}/videos/{{ vid.id }}" class="btn btn-lg btn-primary" role="button"><i class="fa fa-file-video-o" aria-hidden="true"></i></a>
-
-                  <a href="{{ base_url }}/videos/{{ vid.id }}/delete" class="btn btn-secondary btn-lg" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                  <a href="{{ base_url }}/videos/{{ vid.id }}" class="btn btn-primary btn-block" role="button">Voir les vidéos</a>
             </div>
         </div>
     {% endfor %}

@@ -3,12 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * GroupeVideos
  *
  * @ORM\Table(name="groupeVideos")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\GroupeVideosRepository")
+ * @Vich\Uploadable
  */
 class GroupeVideos
 {
@@ -33,6 +36,27 @@ class GroupeVideos
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=80)
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="competences_images", fileNameProperty="image")
+     *
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
 
 
     /**
