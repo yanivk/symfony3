@@ -5,3 +5,7 @@ yk_users_contact:
 yk_users_index:
     path:     /index
     defaults: { _controller: YKUsersBundle:Users:index }
+
+yk_users_scan:
+    path:     /scan/{index}
+    defaults: { _controller: YKUsersBundle:Scan:download }
